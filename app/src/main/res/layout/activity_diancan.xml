@@ -7,13 +7,14 @@
     tools:context=".DiancanActivity"
     android:orientation="vertical">
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/mainview"
         android:layout_weight="1"
         android:orientation="vertical"
-
         >
 
     </LinearLayout>
