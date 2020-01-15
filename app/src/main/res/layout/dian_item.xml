@@ -11,12 +11,12 @@
         android:layout_height="wrap_content"
         >
         <ImageView
-            android:id="@+id/dian_image"
+            android:id="@+id/shangjia_image"
             android:layout_width="match_parent"
             android:layout_height="210dp"
             android:scaleType="centerCrop"/>
         <TextView
-            android:id="@+id/dian_name"
+            android:id="@+id/shangjia_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
