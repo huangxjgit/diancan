@@ -18,6 +18,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.diancan.util.StatusBarUtil;
+
 
 public class DiancanActivity extends AppCompatActivity {
 
@@ -37,7 +39,6 @@ public class DiancanActivity extends AppCompatActivity {
         transaction.hide(fragments[lastfragment]);//隐藏上个Fragment
         if(fragments[index].isAdded()==false) {
             transaction.add(R.id.mainview,fragments[index]);
-
         }
         transaction.show(fragments[index]).commitAllowingStateLoss();
 
@@ -55,7 +56,6 @@ public class DiancanActivity extends AppCompatActivity {
                             {
                                 switchFragment(lastFragment,0);
                                 lastFragment=0;
-
                             }
 
                             return true;
@@ -118,7 +118,6 @@ public class DiancanActivity extends AppCompatActivity {
             decorView.setSystemUiVisibility(option);
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
-
 
     }
 
