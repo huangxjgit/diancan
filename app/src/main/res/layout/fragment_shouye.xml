@@ -82,7 +82,7 @@
                     <TextView
                         android:layout_marginTop="6dp"
                         android:layout_toEndOf="@+id/locatepng"
-                        android:id="@+id/dizhi"
+                        android:id="@+id/dizhitext"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="乐山市人民医院 >"
