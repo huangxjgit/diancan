@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.diancan.util.BadgeUtil;
 import com.example.diancan.util.StatusBarUtil;
 
 
@@ -100,6 +101,7 @@ public class DiancanActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.mainview,shouyeFragment).show(shouyeFragment).commit();
         bottomNavigationView=(BottomNavigationView)findViewById(R.id.navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
     }
 
     @Override
@@ -118,6 +120,7 @@ public class DiancanActivity extends AppCompatActivity {
             decorView.setSystemUiVisibility(option);
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
+        BadgeUtil.setBadgeCount(DiancanActivity.this,1,R.mipmap.appicon);
 
     }
 

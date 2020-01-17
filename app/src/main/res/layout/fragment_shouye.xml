@@ -85,7 +85,7 @@
                         android:id="@+id/dizhitext"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="乐山市人民医院 >"
+                        android:text="乐山市人民医院"
                         android:textStyle="bold"
                         android:textSize="15sp"
                         android:scaleType="centerCrop"

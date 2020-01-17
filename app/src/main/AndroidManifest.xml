@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.diancan">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -10,31 +11,44 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions"/>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.SEND_SMS" />
+
+
+    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE"/>
+    <uses-permission android:name="com.sec.android.provider.badge.permission.READ"/>
+    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE"/>
+    <!-- 申请华为角标权限  -->
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" />
 
     <application
         android:name=".DemoApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/appicon_round"
+        android:icon="@mipmap/appicon"
         android:label="点餐系统"
-        android:roundIcon="@mipmap/appicon_round"
+        android:roundIcon="@mipmap/appicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="gs4vVSQQvt51FgEnw8oQ2tdsfhokOT1b" />
 
-        <activity android:name=".WelcomeActivity">
+        <activity android:name=".WelcomeActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DiancanActivity" />
-        <activity android:name=".Shangjia_item_Activity"></activity>
+        <activity android:name=".DiancanActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Shangjia_item_Activity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
