@@ -25,6 +25,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -41,20 +42,27 @@ import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
+import com.scwang.smartrefresh.header.DropboxHeader;
+import com.scwang.smartrefresh.header.FunGameBattleCityHeader;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.header.ClassicsHeader;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class ShouyeFragment extends Fragment {
+public class ShouyeFragment extends Fragment implements OnRefreshListener {
     private BaiduMap baiduMap;
     public LocationClient mLocationClient;
     private boolean isFirstLocate = true;
     private View view;
     private MapView mapView = null;
     private SearchView searchView;
-    private SwipeRefreshLayout swipeRefresh;
-
+    SmartRefreshLayout mRefresh;
+    MyRefreshLottieHeader mRefreshLottieHeader;
+    FunGameBattleCityHeader mBattleCityHeader;
 
     private Shangjia[]shangjias={new Shangjia("德德塔炸鸡汉堡",R.drawable.bhanbao),new Shangjia("有一家海鲜焖面",R.drawable.bhuajia),
             new Shangjia("黄金炒饭",R.drawable.bchaofan),
@@ -80,21 +88,12 @@ public class ShouyeFragment extends Fragment {
         //设置搜索图标是否显示在搜索框内
         searchView.setIconifiedByDefault(false);
         initShangjias();
+        initView(this.view);
         RecyclerView recyclerView=(RecyclerView)view.findViewById(R.id.recycler_view);
         GridLayoutManager layoutManager=new GridLayoutManager(getActivity().getApplicationContext(),2);
         recyclerView.setLayoutManager(layoutManager);
         adapter=new ShangjiaAdapter(shangjiaList);
         recyclerView.setAdapter(adapter);
-
-        swipeRefresh=(SwipeRefreshLayout)view.findViewById(R.id.swipe_refresh);
-        swipeRefresh.setColorSchemeResources(R.color.colorPrimary);
-        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                refreshItem();
-                requestLocation();
-            }
-        });
 
         List<String> permissionList = new ArrayList<>();
         if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -115,6 +114,29 @@ public class ShouyeFragment extends Fragment {
         return view;
     }
 
+    /**刷新事件*/
+    @Override
+    public void onRefresh(RefreshLayout refreshlayout) {
+        refreshlayout.getLayout().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                refreshItem();
+                requestLocation();
+                mRefresh.finishRefresh();
+            }
+        },2000);
+    }
+
+    private void initView(View view) {
+        mRefresh = view.findViewById(R.id.main_refresh);
+
+        //初始化header
+        mRefreshLottieHeader = new MyRefreshLottieHeader(getActivity().getApplicationContext());
+        mBattleCityHeader = new FunGameBattleCityHeader(getActivity().getApplicationContext());
+        mRefresh.setOnRefreshListener(this);
+        mRefresh.setRefreshHeader(mBattleCityHeader);
+        mRefresh.autoRefresh();
+    }
 
     private LocationClientOption initLocation() {
         LocationClientOption option = new LocationClientOption();
@@ -143,22 +165,7 @@ public class ShouyeFragment extends Fragment {
     }
 
     private void refreshItem(){
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try{
-                    Thread.sleep(2000);
-                }catch (InterruptedException e){
-                    e.printStackTrace();
-                }
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        swipeRefresh.setRefreshing(false);
-                    }
-                });
-            }
-        }).start();
+
     }
 
     @Override

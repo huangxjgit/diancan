@@ -6,11 +6,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ShouyeFragment">
 
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/swipe_refresh"
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/main_refresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         >
     <android.support.design.widget.CoordinatorLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -18,12 +17,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        >
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:id="@+id/appBar"
-            android:fitsSystemWindows="true">
+            android:fitsSystemWindows="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
             <android.support.design.widget.CollapsingToolbarLayout
                 android:id="@+id/collapsing_tollbar"
                 android:layout_width="match_parent"
@@ -65,11 +65,13 @@
         <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            >
+
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="@drawable/bg_cetification">
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -134,16 +136,16 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:id="@+id/recycler_view"
-                            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+                            />
                     </RelativeLayout>
-
                 </android.support.v7.widget.CardView>
+
                 </LinearLayout>
             </LinearLayout>
 
         </android.support.v4.widget.NestedScrollView>
 
     </android.support.design.widget.CoordinatorLayout>
-    </android.support.v4.widget.SwipeRefreshLayout>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 </FrameLayout>
 
