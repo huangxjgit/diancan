@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MainTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:navigationBarColor">@android:color/holo_red_dark</item>
+        <item name="android:statusBarColor">@android:color/holo_red_dark</item>
+        <!--windowTranslucentNavigation这个属性设置成true，则navigationBarColor设置会失效-->
+        <!--<item name="android:windowTranslucentNavigation">false</item>-->
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@drawable/bg</item>
+    </style>
+</resources>

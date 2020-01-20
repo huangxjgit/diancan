@@ -12,13 +12,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@drawable/bg_cetification">
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#adee11"
+            android:orientation="vertical">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="?attr/actionBarSize"
         app:contentInsetStart="0dp"
         app:layout_collapseMode="pin"
+        android:layout_marginTop="19dp"
+
         android:fitsSystemWindows="true"
         >
     <RelativeLayout
@@ -28,15 +35,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_centerHorizontal="true"
             android:text="订单"
-            android:textSize="20sp"
-            android:layout_centerInParent="true"/>
+            android:textSize="22sp" />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/navigationpng"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="8dp"
             />
     </RelativeLayout>
     </android.support.v7.widget.Toolbar>
@@ -44,6 +53,7 @@
             android:id="@+id/tablayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+        </LinearLayout>
         <android.support.v4.view.ViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"

@@ -25,6 +25,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
@@ -63,7 +64,6 @@ public class ShouyeFragment extends Fragment implements OnRefreshListener {
     SmartRefreshLayout mRefresh;
     MyRefreshLottieHeader mRefreshLottieHeader;
     FunGameBattleCityHeader mBattleCityHeader;
-
     private Shangjia[]shangjias={new Shangjia("德德塔炸鸡汉堡",R.drawable.bhanbao),new Shangjia("有一家海鲜焖面",R.drawable.bhuajia),
             new Shangjia("黄金炒饭",R.drawable.bchaofan),
             new Shangjia("满口香卤肉饭",R.drawable.bluroufan),new Shangjia("特价鸡排饭",R.drawable.bjipaifan),
@@ -94,7 +94,6 @@ public class ShouyeFragment extends Fragment implements OnRefreshListener {
         recyclerView.setLayoutManager(layoutManager);
         adapter=new ShangjiaAdapter(shangjiaList);
         recyclerView.setAdapter(adapter);
-
         List<String> permissionList = new ArrayList<>();
         if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             permissionList.add(Manifest.permission.ACCESS_FINE_LOCATION);
@@ -129,7 +128,6 @@ public class ShouyeFragment extends Fragment implements OnRefreshListener {
 
     private void initView(View view) {
         mRefresh = view.findViewById(R.id.main_refresh);
-
         //初始化header
         mRefreshLottieHeader = new MyRefreshLottieHeader(getActivity().getApplicationContext());
         mBattleCityHeader = new FunGameBattleCityHeader(getActivity().getApplicationContext());

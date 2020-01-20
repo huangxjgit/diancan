@@ -26,7 +26,9 @@
     <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" />
 
     <application
-        android:name=".DemoApplication"
+        android:name=".WelApp"
+        android:largeHeap="true"
+        android:hardwareAccelerated="true"
         android:allowBackup="true"
         android:icon="@mipmap/appicon"
         android:label="点餐系统"
@@ -38,6 +40,8 @@
             android:value="gs4vVSQQvt51FgEnw8oQ2tdsfhokOT1b" />
 
         <activity android:name=".WelcomeActivity"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,9 +50,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".DiancanActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden"
             android:screenOrientation="portrait"/>
         <activity android:name=".Shangjia_item_Activity"
             android:screenOrientation="portrait"></activity>
+        <!--region 适配全面屏-->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.4" />
+        <!--endregion-->
     </application>
 
 </manifest>

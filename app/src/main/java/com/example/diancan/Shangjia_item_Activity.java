@@ -16,8 +16,8 @@ import com.bumptech.glide.Glide;
 
 public class Shangjia_item_Activity extends AppCompatActivity {
 
-    public static final String SHANGJIA_NAME = "hero_name";
-    public static final String SHANGJIA_IMAGE_ID = "hero_image_id";
+    public static final String SHANGJIA_NAME = "shangjia_name";
+    public static final String SHANGJIA_IMAGE_ID = "shangjia_image_id";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

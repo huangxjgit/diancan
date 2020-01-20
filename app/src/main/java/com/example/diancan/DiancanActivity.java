@@ -68,7 +68,6 @@ public class DiancanActivity extends AppCompatActivity {
                             {
                                 switchFragment(lastFragment,1);
                                 lastFragment=1;
-
                             }
 
                             return true;

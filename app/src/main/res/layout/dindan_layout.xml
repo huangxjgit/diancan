@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/shangjia_icon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:text="冒牌冒菜：一个人的火锅"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/shangjia_icon"
+            android:layout_marginLeft="5dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/zhuangtai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="待评价"
+            android:layout_marginRight="10dp"/>
+            <View
+                android:id="@+id/xian"
+                android:layout_marginTop="10dp"
+                android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#1f1f1f"
+                android:layout_below="@+id/zhuangtai"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/xian"
+                android:layout_marginTop="10dp">
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/shangjia_bigicon_id"
+                android:layout_marginRight="10dp">
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+            </android.support.v7.widget.CardView>
+         <RelativeLayout
+
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_toEndOf="@+id/shangjia_bigicon_id">
+        <TextView
+            android:id="@+id/_goumai_time"
+            android:text="下单时间：2020-01-19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginTop="5dp"
+            android:id="@+id/jiage"
+            android:text="总价：￥7.8"
+            android:layout_below="@+id/_goumai_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+         </RelativeLayout>
+            </RelativeLayout>
+            <Button
+                android:id="@+id/zhailai_button"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="再来一单"
+                android:background="@drawable/button_circle_shape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>
