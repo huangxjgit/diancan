@@ -51,9 +51,11 @@
         </activity>
         <activity android:name=".DiancanActivity"
             android:windowSoftInputMode="adjustResize|stateHidden"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            />
         <activity android:name=".Shangjia_item_Activity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            ></activity>
         <!--region 适配全面屏-->
         <meta-data
             android:name="android.max_aspect"

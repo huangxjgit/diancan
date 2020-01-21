@@ -52,7 +52,6 @@ public class ShangjiaAdapter extends RecyclerView.Adapter<ShangjiaAdapter.ViewHo
                 intent.putExtra(Shangjia_item_Activity.SHANGJIA_NAME,qu.getName());
                 intent.putExtra(Shangjia_item_Activity.SHANGJIA_IMAGE_ID,qu.getImageId());
                 mContext.startActivity(intent);
-
             }
         });
         return holder;

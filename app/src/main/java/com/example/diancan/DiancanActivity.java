@@ -15,11 +15,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.diancan.util.BadgeUtil;
 import com.example.diancan.util.StatusBarUtil;
+import com.tandong.swichlayout.BaseAnimViewS;
+import com.tandong.swichlayout.BaseEffects;
+import com.tandong.swichlayout.SwitchLayout;
 
 
 public class DiancanActivity extends AppCompatActivity {
@@ -107,6 +110,7 @@ public class DiancanActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diancan);
+       // requestWindowFeature(Window.FEATURE_NO_TITLE);
         initFragment();
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -120,7 +124,10 @@ public class DiancanActivity extends AppCompatActivity {
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
         BadgeUtil.setBadgeCount(DiancanActivity.this,1,R.mipmap.appicon);
-
+        SwitchLayout.getSlideFromBottom(this, false,
+                BaseEffects.getQuickToSlowEffect());
+        SwitchLayout.animDuration = 1000;
+        BaseAnimViewS.animDuration = 1000;
     }
 
 
